@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Technical Documentation</title>
+  <head>
+
+  <nav id="navbar">
+    <header>Warp Documentation</header>
+    <ul>
+      <li>
+        <a class="nav-link" href="#Intro_to_Warp_and_Warp_Drive">Intro to Warp and Warp Drive</a>
+      </li>
+      <li>
+        <a class="nav-link" href="#Warp_Core">Warp Core</a>
+      </li>
+      <li>
+        <a class="nav-link" href="#Anti-matter_Containment">Anti-matter Containment</a>
+      </li>
+      <li>
+        <a class="nav-link" href="#Bussard_Collector">Bussard Collector</a>
+      </li>
+      <li>
+        <a class="nav-link" href="#Warp_Factor">Warp Factor</a>
+      </li>    
+      <li>
+        <a class="nav-link" href="#Information_Source">Information Source</a>
+      </li>    
+    </ul>
+  </nav>
+
+
+  <main id="main-doc">
+    <section class="main-section" id="Intro_to_Warp_and_Warp_Drive">
+      <header>Intro to Warp and Warp Drive</header>
+        <p>Warp drive or warp engine is a technology that allows space travel at faster-than-light speeds.</p>
+        <p>The basic functional principle of the warp drive is the same for all spaceships. A strong energy source, usually a so-called warp core or sometimes called intermix chamber, generates a high-energy plasma. This plasma is transported to the so-called warp field generators via lines that are reminiscent of pipes. These generators are basically coils in warp nacelles protruding from the spaceship. These generate a subspace field, the so-called warp field or a warp bubble, which distort space-time and propels the bubble and spaceship in the bubble forward.</p>
+        <p>Basic code for wrap drive written in FederationScript:</p>
+        <code>
+          function WarpDrive() {
+  let dilithiumCrystals = 3500;
+  let warpFactor = 5;
+  let gravitonParticles = 25000;
+
+  let warpSpeed = calculateWarpSpeed(dilithiumCrystals, warpFactor, gravitonParticles);
+
+warpSpeed >= 9 ? console.log("Ready to engage warp drive") : console.log("Warp drive not ready for warp speed " + warpSpeed + " due to {error}");
+  
+function calculateWarpSpeed(dilithiumCrystals, warpFactor, gravitonParticles) {
+  let warpSpeed = (dilithiumCrystals + warpFactor * gravitonParticles) / infinity;
+
+  return warpSpeed;
+}
+
+WarpDrive();
+        </code>
+   </section>
+    <section class="main-section" id="Warp_Core">
+      <header>Warp Core</header>
+        <p>Warp core, or warp core reactor, is the common designation for the main energy reactor powering the propulsion system on warp-capable starships. Sometimes, warp reactors are known as the "gravimetric field displacement manifold". A less common name for this core is "antimatter reactor core."</p>
+        <p>The warp core usually consists of a matter/antimatter reaction assembly (M/ARA) utilizing deuterium and antideuterium reacting in a dilithium crystal matrix.</p>
+        <p>As a safety precaution, the core could usually be physically ejected from the ship, should an event such as a catastrophic containment failure of the matter-antimatter reaction occur that could not be corrected.</p>
+        <p>There were also some tactical uses for ejecting and detonating a core on purpose. The detonation could, for example, be used to:
+          <ol>
+            <li>Neutralize the cascade of a subspace tear; or</li>
+            <li>Push a ship away from the gravity well of a black hole</li>
+          </ol>
+        </p>
+        <p>Many other interesting facts exist about warp cores. For example:
+          <ul>
+            <li>Warp cores on starships leave resonance traces, allowing for the ability to track vessels</li>
+            <li>A warp core can be towed at warp speed using a tractor beam if the beam is calibrated properly</li>
+            <li>When a warp core goes offline, deuterium can be used as a fuel to support basic functions of a ship's auxiliary fusion reactors and impulse drive</li>
+            <li>Warp cores emit a thrumming sound, audible through much of the ship, that some Humanoids found soothing, gentle, or otherwise pleasant</li>
+          </ul>
+    <p>Here is a small sample of the FederationScript utilized in the tractor beam towing the warp core: </p>
+      <code>
+function towWarpCore(obstaclesPresent, gravityLevel, shipVelocity) {
+  let tractorBeamPower = calculateTractorBeamPower(obstaclesPresent, gravityLevel, shipVelocity);
+
+  if (tractorBeamPower >= 80) {
+    console.log("Tractor beam calibrated. Initiating warp core tow.");
+  } else {
+    console.log("Calibration failed. Tractor beam power insufficient: " + tractorBeamPower + "%. Adjusting parameters.");
+  }
+}
+
+function calculateTractorBeamPower(obstaclesPresent, gravityLevel, shipVelocity) {
+  let tractorBeamPower = 100;
+
+  if (obstaclesPresent) {
+    tractorBeamPower -= 20;
+  }
+
+  tractorBeamPower -= gravityLevel * 10;
+
+  if (shipVelocity > 0) {
+    tractorBeamPower -= shipVelocity / 10;
+  }
+
+  return tractorBeamPower;
+}
+
+towWarpCore(true, 5, 20);
+      </code>
+   </section>
+
+    <section class="main-section" id="Anti-matter_Containment">
+      <header>Anti-matter Containment</header>
+        <p>Antimatter containment is achieved through the use of magnetic fields, which guide and direct the antimatter through the antimatter integrator to injector coils, which precisely compress and stream the antimatter into the form which enters the intermix chamber. Deuterium, stored in the ship or attracted by the Bussard collectors, is funneled in a stream from the opposite deuterium injector.</p>
+        <p>The resulting energy plasma molecules enter the lattice matrix of the crystallized dilithium chamber, reacting within it and releasing a tuned energy stream in the form of electro-plasma, a highly energetic form of plasma. The electro-plasma is carried by magnetic plasma conduits throughout the power transfer system.</p>
+        <p>Here is the main node module for anti-matter flow in FederationScript:</p>
+        <code>     
+function calculateElectroPlasma(antimatter, injectorCoils, intermixChamber, dilithiumChamber) {
+  let electroPlasma = complexNumber(100, 0);
+
+  let antimatterComplex = complexNumber(antimatter, 0);
+  let injectorCoilsComplex = complexNumber(injectorCoils, 0);
+  let intermixChamberComplex = complexNumber(intermixChamber, 0);
+  let dilithiumChamberComplex = complexNumber(dilithiumChamber, 0);
+
+  let antimatterTerm = multiplyComplexNumbers(antimatterComplex, complexNumber(0.5, 0));
+  let injectorCoilsTerm = multiplyComplexNumbers(injectorCoilsComplex, complexNumber(10, 0));
+  let intermixChamberTerm = multiplyComplexNumbers(intermixChamberComplex, complexNumber(5, 0));
+  let dilithiumChamberTerm = multiplyComplexNumbers(dilithiumChamberComplex, complexNumber(-8, 0));
+
+  electroPlasma = subtractComplexNumbers(electroPlasma, antimatterTerm);
+  electroPlasma = subtractComplexNumbers(electroPlasma, injectorCoilsTerm);
+  electroPlasma = subtractComplexNumbers(electroPlasma, intermixChamberTerm);
+  electroPlasma = subtractComplexNumbers(electroPlasma, dilithiumChamberTerm);
+
+  return electroPlasma;
+}
+
+function complexNumber(real, electroPlasma) {
+  return {
+    real: real,
+    electroPlasma: electroPlasma,
+    greaterThanOrEqualTo: function (value) {
+      return this.magnitude() >= value;
+    },
+    magnitude: function () {
+      return Math.sqrt(this.real ** 2 + this.electroPlasma ** 2);
+    },
+    toString: function () {
+      return this.real + " + " + this.electroPlasma + "i";
+    }
+  };
+}
+
+function multiplyComplexNumbers(c1, c2) {
+  let real = c1.real * c2.real - c1.electroPlasma * c2.electroPlasma;
+  let electroPlasma = c1.real * c2.electroPlasma + c1.electroPlasma * c2.real;
+  return complexNumber(real, electroPlasma);
+}
+
+function subtractComplexNumbers(c1, c2) {
+  let real = c1.real - c2.real;
+  let electroPlasma = c1.electroPlasma - c2.electroPlasma;
+  return complexNumber(real, electroPlasma);
+}
+
+AntimatterContainment(80, 6, 4, 9);
+      </code>
+    </section>
+
+    <section class="main-section" id="Bussard_Collector">
+      <header>Bussard Collector</header>
+        <p>The Bussard collector, also known as the Bussard ramscoop, or simply the ramscoop, is a device usually attached to the forward end of a warp nacelle. </p>
+        <p>All starships are equipped with Bussard collectors, optimally positioned to collect interstellar particles. Collection works best in regions where particle density is high, such as in star systems or nebulae. The Bussard collector normally collects hydrogen, especially deuterium, for fuel replenishment, but can be reconfigured to collect various gases like sirillium and plasma particles. A Bussard collector can also be reconfigured to expel gases or plasma.</p>
+      <p>Here is FederationCode for a sample matter scoop from a Bussard collector:</p>
+        <code>
+          const spaceMatter = {
+  "H2O": busInjection(100, 1000),
+  "CO2": busInjection(10, 100),
+  "N2": busInjection(20, 200),
+  "CH4": busInjection(5, 50),
+  "He": busInjection(50, 500),
+  "Li2O": busInjection(2, 20),
+  "Xe": busInjection(1, 10)
+};
+
+function filterSpaceMatter(matter) {
+  const filteredMatter = {};
+
+  for (let composition in matter) {
+    if (composition !== "CO2" && composition !== "H2O" && composition !== "He") {
+      filteredMatter[composition] = matter[composition];
+    }
+  }
+
+  return filteredMatter;
+}
+
+
+function storeInNacelle(filteredMatter) {
+  let nacelleStorage = {};
+
+  for (let composition in filteredMatter) {
+    let quantity = filteredMatter[composition];
+    nacelleStorage[composition] = quantity;
+  }
+
+  console.log("Filtered matter stored in the nacelle:", nacelleStorage);
+}
+
+console.log("Space matter before filtration:", spaceMatter);
+
+const filteredMatter = filterSpaceMatter(spaceMatter);
+
+console.log("Space matter after filtration:", filteredMatter);
+
+storeInNacelle(filteredMatter);
+        </code>
+    </section>
+
+    <section class="main-section" id="Warp_Factor">
+      <header>Warp Factor</header>
+        <p>Time-Warp factor, better known as warp factor, is the primary means of measuring speeds attained using warp drive. The term is often shortened to warp when followed by its value, so that saying "warp six" is the same as saying "warp factor six." Light-speed travel begins at warp one, whereas lower fractional values sometimes measured sublight speeds or sublight factors.</p>
+        <p>Warp ten is an infinite velocity and thus unattainable by conventional means. Because of this, extremely high warp speeds mapped to decimal values between nine and ten, such as warp 9.975.</p>
+        <p>Here is a simplified version of warp factor in FederationScript:
+          <code>
+            function calculateWarpFactor(v, c) {
+  let wf = Math.pow((v / c), 3) + 1;
+  return wf.toFixed(2);
+}
+
+const signalSpeed = 2.5 * Math.pow(10, 8);
+const speedOfLight = 3.0 * Math.pow(10, 8);
+
+const warpFactor = calculateWarpFactor(signalSpeed, speedOfLight);
+console.log("Warp factor:", warpFactor);
+          </code>
+    </section>
+
+   <section class="main-section" id="Information_Source">
+      <header>Information Source</header>
+        <p>All of the documentation for this page is taken from <a href="https://memory-alpha.fandom.com/wiki/Portal:Main">Memory Alpha</a> -- in their words, "a collaborative project to create the most definitive, accurate, and accessible encyclopedia and reference for everything related to <u>Star Trek</u>."</p>
+        <p>All of the JavaScript ("FederationScript") code was generated using <a href="https://openai.com/" target="_blank">OpenAI</a>'s <a href="https://openai.com/chatgpt" target="_blank">ChatGPT</a>.</p>
+    </section>
+
+  </main>
+</html>
